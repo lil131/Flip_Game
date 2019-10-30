@@ -1,0 +1,19 @@
+button {
+  border-radius: 5px;
+  border: 1px solid #2F4F4F;
+}
+
+button.yellow-cell {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  background-color: #ffa500;
+}
+
+button.blue-cell {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  background-color: #008CBA;
+}
+
