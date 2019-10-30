@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './GameBoard.css';
 import Square from './Square';
 
@@ -118,7 +117,7 @@ class GameBoard extends React.Component {
   
   render() {
     localStorage.setItem('bestLevel', [2]);
-    const { curLevel, totalClicks, bestLevel, curBoardStatus } = this.state;
+    const { curLevel, totalClicks, bestLevel } = this.state;
     const levelList = this.levelList(bestLevel);
     return (
       <div className="game-board">
