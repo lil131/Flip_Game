@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and built by webpack.
 
+Try it out on [Glitch](https://project2-lil131.glitch.me/).
+
 ### 1. What framework did you pick and why?
 I picked **React** because it is currently the most popular framework and has a lot of positive feedbacks among programmers, according to the statistics data from [stateofjs](https://2018.stateofjs.com/front-end-frameworks/overview/).
 
