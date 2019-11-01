@@ -15,10 +15,11 @@ class Square extends React.Component {
 
   render(){
     return(
-      <button 
+      // use <td> instead of <button> as button should not be nested in <tr>
+      <td 
         className={this.props.cellValue? 'blue-cell': 'yellow-cell'} 
         onClick={() => this.handleClick()}>
-      </button>
+      </td>
     );
   }
 }

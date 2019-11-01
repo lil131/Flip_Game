@@ -1,16 +1,16 @@
-button {
+td {
   border-radius: 5px;
   border: 1px solid #2F4F4F;
 }
 
-button.yellow-cell {
+td.yellow-cell {
   height: 50px;
   width: 50px;
   border-radius: 5px;
   background-color: #ffa500;
 }
 
-button.blue-cell {
+td.blue-cell {
   height: 50px;
   width: 50px;
   border-radius: 5px;

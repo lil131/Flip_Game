@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './GameBoard.css';
 import Square from './Square';
 
@@ -48,18 +47,18 @@ class GameBoard extends React.Component {
       // update clicks
       const Clicks = totalClicks + 1;
       this.setState(() => {return {totalClicks: Clicks, curBoardStatus: board};}, () => this.checkBoard(curBoardStatus));
-      console.log(curBoardStatus);
     }
   }
   
   checkBoard(board){
-    for (let r = 0; r < board.length; r++) {
+    const curLevel = board.length;
+    for (let r = 0; r < curLevel; r++) {
       if (board[r].includes(0)) { 
         return
       }
     }
-    localStorage.setItem('bestLevel', board.length);
-    this.setState({hasWon: true}, () => (this.refs.modal.style.display='block'));
+    localStorage.setItem('bestLevel', curLevel);
+    this.setState({hasWon: true, bestLevel: curLevel}, () => (this.refs.modal.style.display='block'));
   }
   
   renderTable(n) {
@@ -71,6 +70,7 @@ class GameBoard extends React.Component {
       for (let x = 0; x < curLevel; x++) {
         row.push(
           <Square
+            key={y.toString() + "-" + x.toString()}
             cellValue={boardStatus[y][x]}
             onClickSquare={() => this.flipCells(y,x)}
           />
@@ -98,16 +98,27 @@ class GameBoard extends React.Component {
   onClickClose = () => {
     this.refs.modal.style.display = 'none';
     // setTimeout() is not necessary here, just for record
-    setTimeout(() => this.jumpToNext(this.state.curLevel), 100); 
+    setTimeout(() => this.jumpToNext(this.state.curLevel + 1), 100); 
   }
 
   jumpToNext(n){
     this.initBoard(n);
-    this.setState({curLevel: n + 1, curBoardStatus: this.initBoard(n + 1), hasWon: false, totalClicks: 0, bestLevel: n});
+    this.setState({curLevel: n, curBoardStatus: this.initBoard(n), hasWon: false, totalClicks: 0});
+  }
+
+  levelList(n){
+    let list = [2];
+    const range = this.state.bestLevel + 1
+    for (let i = 3; i <= range; i ++) {
+      list.push(i);
+    }
+    return list;
   }
   
   render() {
-    const { curLevel, totalClicks, bestLevel, curBoardStatus } = this.state;
+    localStorage.setItem('bestLevel', [2]);
+    const { curLevel, totalClicks, bestLevel } = this.state;
+    const levelList = this.levelList(bestLevel);
     return (
       <div className="game-board">
         <div className="user-status">
@@ -127,6 +138,14 @@ class GameBoard extends React.Component {
             <li key="best-level">Best Level: {localStorage.getItem('bestLevel') || 0}</li>
           </ul>
           <div className="buttons">
+            <div className="dropdown">
+              <button className="select-level">Choose Level</button>
+              <div className="dropdown-content">
+                {
+                  levelList.map((l) => (<a key={l} onClick={() => this.jumpToNext(l)}>Level {l}</a>))
+                }
+              </div>
+            </div>
             <button className="reset" onClick={this.onReset}>Reset Board</button>
             <button className="clear-record" onClick={this.onClearRecord}>Clear Record</button>
           </div>

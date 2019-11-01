@@ -30,7 +30,6 @@ class App extends Component {
   }
 
   render() {
-    const {curLevel} = this.state;
     return (
       <div className="App">
         <div className="App-header">
