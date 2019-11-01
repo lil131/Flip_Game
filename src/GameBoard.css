@@ -1,3 +1,8 @@
+button {
+  border-radius: 5px;
+  border: 1px solid #2F4F4F;
+}
+
 table.game-table {
   margin-left: auto;
   margin-right: auto;
@@ -53,7 +58,7 @@ button.select-level {
   position: absolute;
   background-color: #f9f9f9;
   width: 90px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
   z-index: 1;
 }
 
@@ -66,6 +71,7 @@ button.select-level {
 
 .dropdown:hover .dropdown-content {
   display: block;
+  border-redius: 5px;
 }
 .dropdown-content a:hover {
   background-color: #f1f1f1
