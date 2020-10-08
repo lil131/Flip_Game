@@ -1,4 +1,5 @@
-# My First React App on Glitch
+# My React App on Glitch
+For course *INFSCI 2560: Web Technologies & Standards*
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and built by webpack.
 
@@ -12,7 +13,7 @@ Besides, compared with Angular, React seems to be more **flexible**, since Angul
 What's more, React uses virtual DOM instead of regular DOM which makes it much **faster** than others. Because only the differences between the current HTML and the previous one will be inspected and updated.
 
 ### 2. What about that framework appealed to you, for this project?
-After I started using React, I found that **JSX** is so convinient for coding. Since it is combines makeups and logics together, just by looking at the HTML-like syntax, I can easily imagine how the webpage will look like while I'm working on the logics. And thus the structure is so much clearer than vanilla JS.
+I found that **JSX** is very convinient for coding. Since it is combines makeups and logics together, just by looking at the HTML-like syntax, I can easily imagine how the webpage will look like while I'm working on the logics. And thus the structure is so much clearer than vanilla JS.
 
 Although the **one-way-binding method** of React is kind of complicated when I first learned it, it makes the application easier to maintain as the data can only flow downward so that the changes could not affect any parent structure.
 
