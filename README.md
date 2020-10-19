@@ -1,5 +1,5 @@
 # My React App on Glitch
-For course *INFSCI 2560: Web Technologies & Standards*
+For course ***INFSCI 2560: Web Technologies & Standards***
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and built by webpack.
 
